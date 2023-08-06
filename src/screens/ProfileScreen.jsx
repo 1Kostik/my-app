@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   posterName: {
-    fontFamily: "Roboto-Medium",
+    fontFamily: "Medium",
     fontSize: 30,
     color: "rgba(33, 33, 33, 1)",
     marginBottom: 33,

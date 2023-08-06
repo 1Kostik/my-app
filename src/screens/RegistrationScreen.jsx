@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
   },
   title: {
-    fontFamily: "Roboto-Medium",
+    fontFamily: "Medium",
     fontSize: 30,
     marginBottom: 32,
   },
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     left: 255,
   },
   showPassText: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     color: "#1B4371",
   },
   registerBtn: {
@@ -252,14 +252,14 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   registerText: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     color: "#fff",
   },
   questionCont: {
     flexDirection: "row",
   },
   questionText: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     color: "#1B4371",
   },
 });

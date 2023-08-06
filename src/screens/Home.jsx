@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     headerTitleAlign: "center",
     headerTitleStyle: {
       textAlign: "center",
-      fontFamily: "Roboto-Medium",
+      fontFamily: "Medium",
       fontSize: 17,
       color: "#212121",
     },

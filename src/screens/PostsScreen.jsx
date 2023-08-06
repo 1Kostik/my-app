@@ -73,12 +73,12 @@ const styles = StyleSheet.create({
   userImage: { width: 60, height: 60 },
   userName: {
     fontSize: 13,
-    fontFamily: "Roboto-Medium",
+    fontFamily: "Medium",
     color: "#212121",
   },
   userEmail: {
     fontSize: 11,
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     color: "#21212180",
   },
 });

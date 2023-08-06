@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontFamily: "Roboto-Medium",
+    fontFamily: "Medium",
     fontSize: 30,
     marginBottom: 32,
   },
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     left: 255,
   },
   showPassText: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     color: "#1B4371",
   },
   loginBtn: {
@@ -175,14 +175,14 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   loginText: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     color: "#fff",
   },
   questionCont: {
     flexDirection: "row",
   },
   questionText: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     color: "#1B4371",
   },
 });

@@ -12,7 +12,7 @@ import { useRoute } from "@react-navigation/native";
 import { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
-import { Comment } from "../components/Comments";
+import { Comment } from "../components/Comment";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../redux/auth/selectors";
 import { uuidv4 } from "@firebase/util";

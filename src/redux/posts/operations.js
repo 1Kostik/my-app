@@ -5,7 +5,7 @@ import {
   getDocs,
   doc,
 } from "firebase/firestore";
-import { db } from "../../firebase/config";
+import { db } from "../../../firebase/config";
 import { updatePosts, writePostsId } from "./postsSlice";
 
 export const writeDataToFirestore = (posts) => async (dispatch) => {

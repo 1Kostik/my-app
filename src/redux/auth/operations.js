@@ -6,7 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 
-import { auth } from "../../firebase/config";
+import { auth } from "../../../firebase/config";
 import { authSignOut, updateUserInfo } from "./authSlice";
 
 export const registerDB =

@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     height: 240,
   },
   description: {
-    fontFamily: "Roboto-Medium",
+    fontFamily: "Medium",
     fontSize: 16,
     color: "#212121",
     marginBottom: 8,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   placeText: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     fontSize: 16,
     color: "#212121",
   },

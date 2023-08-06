@@ -22,10 +22,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "softwareKeyboardLayoutMode": "pan" 
+      "softwareKeyboardLayoutMode": "pan",
+      "package": "com.konstantin0001.myapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "83a3c16f-ba1d-44ad-b2d9-b6ce54ad24e7"
+      }
     }
   }
 }

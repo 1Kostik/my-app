@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
   },
   accessWarn: {
     textAlign: "center",
-    fontFamily: "Roboto-Medium",
+    fontFamily: "Medium",
     fontSize: 17,
     color: "#212121",
   },
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
   },
 
   photoText: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     fontSize: 16,
     color: "#BDBDBD",
     alignSelf: "flex-start",
@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     width: "100%",
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     fontSize: 16,
     color: "#212121",
   },
@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     height: 51,
-    fontStyle: "Roboto-Regular",
+    fontStyle: "Regular",
     fontSize: 16,
     borderRadius: 100,
     marginBottom: 80,
