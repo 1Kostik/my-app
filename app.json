@@ -30,8 +30,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "83a3c16f-ba1d-44ad-b2d9-b6ce54ad24e7"
+        "projectId": "868cb211-71e1-4c31-bd5b-18670bc733b1"
       }
-    }
+    },
+    "owner": "konstantin0001"
   }
 }
