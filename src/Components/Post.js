@@ -1,103 +1,110 @@
-import { View, StyleSheet, Image, Text, Pressable } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import Comment from '../Images/comment.png';
-import CommentTrue from '../Images/comment-true.png';
-import Map from '../Images/map-pin.png';
-import Like from '../Images/thumbs.png';
+import { View, StyleSheet, Image, Text, Pressable } from "react-native";
+import { Feather } from "@expo/vector-icons";
+import commentLogo from "../../assets/images/comentsIcon.png";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Post({ post }) {
+export const Post = ({ itemInfo }) => {
+  const { id, description, place, location, comments, likes, image } = itemInfo;
   const navigation = useNavigation();
+ 
+  const handleComments = () => {
+    navigation.navigate("Comments", {
+      image,
+      postId: id,
+      comments,
+    });
+  };
+
+  const handleLocation = () => {
+    navigation.navigate("Map", { location, place, description });
+  };
 
   return (
-    <View key={post.id} style={styles.postContainer}>
-      <Image source={post.image} style={styles.postImg} />
-      <Text style={styles.postText}>{post.name}</Text>
-      <View style={styles.description}>
-        <View style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
-          <Pressable
-            onPress={() =>
-              navigation.navigate('CommentScreen', {
-                postComments: post.comments,
-                postImg: post.image,
-              })
-            }
-          >
-            {post.comments.length > 0 ? (
-              <View style={styles.commentContainer}>
-                <Image source={CommentTrue} style={styles.commentImg} />
-                <Text style={{ color: '#212121' }}>{post.comments.length}</Text>
-              </View>
-            ) : (
-              <View style={styles.commentContainer}>
-                <Image source={Comment} style={styles.commentImg} />
-                <Text style={{ color: '#BDBDBD' }}>{post.comments.length}</Text>
-              </View>
-            )}
-          </Pressable>
-          <Pressable onPress={() => console.log('liked')}>
-            <View style={styles.commentContainer}>
-              <Image source={Like} />
-              <Text style={{ color: '#212121' }}>{post.likes}</Text>
-            </View>
-          </Pressable>
-        </View>
-
-        <Pressable
-          onPress={() =>
-            navigation.navigate('MapScreen', { postLocation: post.location })
-          }
-        >
-          <View style={styles.placeContainer}>
-            <Image source={Map} />
-            <Text style={styles.placeText}>{post.place}</Text>
+    <View style={styles.container}>
+      <View style={styles.photoContainer}>
+        <Image source={{ uri: image }} style={styles.photo} alt={description} />
+      </View>
+      <Text style={styles.description}>{description}</Text>
+      <View style={styles.comentsAndPlaceContainer}>
+        <Pressable style={styles.comments} onPress={handleComments}>
+          {comments.length > 0 ? (
+            <Image source={commentLogo} style={{ marginRight: 6 }} />
+          ) : (
+            <Feather
+              name="message-circle"
+              size={24}
+              color="#BDBDBD"
+              style={[{ transform: [{ scaleX: -1 }] }, { marginRight: 6 }]}
+            />
+          )}
+          <Text style={styles.comentsNumber}>{comments.length}</Text>
+        </Pressable>
+        {likes !== 0 && (
+          <View style={styles.thumb}>
+            <Feather
+              name="thumbs-up"
+              size={24}
+              color="#FF6C00"
+              style={{ marginRight: 6 }}
+            />
+            <Text style={styles.comentsNumber}>{likes}</Text>
           </View>
+        )}
+        <Pressable style={styles.place} onPress={handleLocation}>
+          <Feather
+            name="map-pin"
+            size={24}
+            color="#BDBDBD"
+            style={{ marginRight: 4 }}
+          />
+          <Text style={styles.placeText}>{place}</Text>
         </Pressable>
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  postContainer: {
-    marginBottom: 32,
+  container: {
+    width: "100%",
   },
-  postImg: {
-    height: 240,
+  photoContainer: {
     marginBottom: 8,
     borderRadius: 8,
-    width: '100%',
+    overflow: "hidden",
   },
-  postText: {
-    color: '#212121',
-    fontFamily: 'Roboto',
-    fontSize: 16,
-    marginBottom: 8,
+  photo: {
+    width: "100%",
+    height: 240,
   },
   description: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    fontFamily: "Roboto-Medium",
+    fontSize: 16,
+    color: "#212121",
+    marginBottom: 8,
   },
-  commentContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+  comentsAndPlaceContainer: {
+    flexDirection: "row",
+    marginBottom: 32,
   },
-  commentImg: {
-    width: 24,
-    height: 24,
-    marginRight: 6,
+  comments: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginRight: 24,
   },
-  placeContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+  thumb: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  place: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    flexGrow: 1,
+    alignItems: "center",
   },
   placeText: {
-    color: '#212121',
-    fontFamily: 'Roboto',
+    fontFamily: "Roboto-Regular",
     fontSize: 16,
-    marginLeft: 4,
-    textDecorationLine: 'underline',
+    color: "#212121",
   },
 });
