@@ -68,13 +68,13 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     fontSize: 13,
     color: "#212121",
     marginBottom: 8,
   },
   date: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Regular",
     fontSize: 10,
     color: "#BDBDBD",
     alignSelf: "flex-end",
